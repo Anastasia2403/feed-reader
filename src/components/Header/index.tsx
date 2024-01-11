@@ -1,22 +1,19 @@
-import * as React from 'react';
+import React from 'react';
 import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectUser, setUser } from '../../store/user/user.slice';
 
 export const Header = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector(selectUser);
+  const userId = localStorage.getItem('userId');
 
   const logoutClick = () => {
-    dispatch(setUser({}));
+    localStorage.removeItem('userId');
     navigate('/login');
   };
 
   return (
     <>
-      {user.id && (
+      {userId && (
         <Box sx={{ flexGrow: 1 }}>
           <AppBar position="static">
             <Toolbar>

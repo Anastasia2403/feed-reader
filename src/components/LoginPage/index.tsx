@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Button, IconButton, InputAdornment, TextField } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { setUser } from '../../store/user/user.slice';
 import { login } from '../../services/auth';
 import './LoginPage.css';
 
@@ -13,7 +11,6 @@ export const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleTogglePasswordVisibility = () => {
@@ -38,7 +35,7 @@ export const LoginPage = () => {
 
     login()
       .then((data) => {
-        dispatch(setUser(data));
+        localStorage.setItem('userId', data.id);
         navigate('/');
       })
       .catch(() => {
@@ -47,7 +44,7 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="mainContainer">
+    <div className="authContainer">
       <h1>Login Page</h1>
       <h2>Please login to read a feed</h2>
       <form className="loginForm" onSubmit={handleSubmit}>

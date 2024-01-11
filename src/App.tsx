@@ -3,6 +3,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { LoginPage } from './components/LoginPage';
 import { HomePage } from './components/HomePage';
 import { Header } from './components/Header';
+import { FeedArticlesPage } from './components/ FeedArticlesPage';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/feed/:feedUrl" element={<FeedArticlesPage />} />
         </Routes>
       </div>
     </BrowserRouter>
