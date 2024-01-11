@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { LoginPage } from './components/LoginPage';
 import { HomePage } from './components/HomePage';
 import { Header } from './components/Header';
@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Header />
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path="/feed/:feedUrl" element={<FeedArticlesPage />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
