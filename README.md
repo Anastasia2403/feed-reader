@@ -1,5 +1,9 @@
 # Feed Reader App
 
+## Demo
+
+Check out the live demo: [Feed Reader Demo](https://anastasia2403.github.io/feed-reader/)
+
 ## Overview
 
 Welcome to the Feed Reader project! This application is designed to provide users with a seamless experience in managing and reading articles from various feeds, such as RSS.
