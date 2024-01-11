@@ -27,8 +27,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy" : "npm run build",
-    "deploy" : "gh-pages -b gh-pages -d build"
+    "deploy" : "gh-pages -b gh-pages-2-0 -d build"
   },
+  "homepage": "https://anastasia2403.github.io/feed-reader",
   "eslintConfig": {
     "extends": [
       "react-app",
