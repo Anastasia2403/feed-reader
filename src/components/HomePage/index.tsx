@@ -88,9 +88,15 @@ export const HomePage = () => {
       body,
     };
 
+    const id =
+      (feeds
+        .map((feed) => feed?.id)
+        .filter((id) => id !== undefined)
+        .reduce((a, b) => Math.max(a as number, b as number), 0) || 0) + 1;
+
     addFeed(newFeed)
-      .then((data) => {
-        setFeeds([...feeds, data]);
+      .then(() => {
+        setFeeds([...feeds, { ...newFeed, id: id }]);
         toast.success('Success adding feed');
       })
       .catch(() => {
