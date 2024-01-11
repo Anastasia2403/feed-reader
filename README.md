@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to the Feed Reader project! This application is designed to provide users with a seamless experience in managing and reading articles from various feeds, such as RSS. The project is built using `React.js` for the frontend and utilizes a server-side API for managing user-specific feed definitions.
+Welcome to the Feed Reader project! This application is designed to provide users with a seamless experience in managing and reading articles from various feeds, such as RSS.
 
 ## Technologies Used
 
