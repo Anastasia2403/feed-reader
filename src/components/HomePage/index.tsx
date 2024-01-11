@@ -48,6 +48,12 @@ export const HomePage = () => {
   const userId = localStorage.getItem('userId');
 
   useEffect(() => {
+    if (!userId) {
+      navigate('/login');
+    }
+  }, []);
+
+  useEffect(() => {
     getFeedsList();
   }, []);
 
